@@ -6,12 +6,18 @@ content = ""
 
 index = """
 <|text-center|
-<|{logo.png}|image|>
+<|{"logo.png"}|image|>
 
 <|{content}|file_selector|>
 select an image from your file system
+
+<|{img_path}|image|>
+
 >
 """
+
+def on_change(state, var_name, var_val):
+    print(var_name, var_val)
 
 app = Gui(page=index)
 
